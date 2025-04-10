@@ -1,8 +1,10 @@
 import cv2
+import glob
 import numpy as np
 import os
 import sys
 import tensorflow as tf
+import keras
 
 from sklearn.model_selection import train_test_split
 
@@ -58,8 +60,15 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    raise NotImplementedError
-
+    images, labels = [], []
+    for i in range(NUM_CATEGORIES):
+        ppm_files = glob.glob(os.path.join(f'{data_dir}{os.path.sep}{i}{os.path.sep}', '*.ppm'))
+        for f in ppm_files:
+            img = cv2.imread(f)
+            img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
+            images.append(img)
+            labels.append(i)
+    return images, labels
 
 def get_model():
     """
@@ -67,8 +76,30 @@ def get_model():
     `input_shape` of the first layer is `(IMG_WIDTH, IMG_HEIGHT, 3)`.
     The output layer should have `NUM_CATEGORIES` units, one for each category.
     """
-    raise NotImplementedError
+    model = keras.Sequential([
+        keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)),
+        keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        
+        keras.layers.Conv2D(filters=64, kernel_size=(3,3), activation='relu'),
+        keras.layers.MaxPooling2D((2,2)),
 
+        keras.layers.Conv2D(filters=128, kernel_size=(3,3), activation='relu'),
+        keras.layers.MaxPooling2D((2,2)),
+
+        keras.layers.Flatten(),
+
+        keras.layers.Dense(256, 'relu'),
+        keras.layers.Dense(256, 'relu'),
+        keras.layers.Dropout(0.5),
+
+        keras.layers.Dense(NUM_CATEGORIES, 'softmax'),
+    ])
+    model.compile(
+        optimizer="adam",
+        loss="categorical_crossentropy",
+        metrics=["accuracy"]
+    )
+    return model
 
 if __name__ == "__main__":
     main()

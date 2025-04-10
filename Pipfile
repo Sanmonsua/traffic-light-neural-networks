@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+opencv-python = "*"
+scikit-learn = "*"
+tensorflow = "*"
 
 [dev-packages]
 

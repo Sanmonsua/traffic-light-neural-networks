@@ -1,3 +1,24 @@
+# 🚦 Traffic Sign Recognition with Neural Networks 🚦
+
+## Project Overview
+Welcome to the Traffic Sign Recognition project! This exciting application of artificial intelligence tackles one of the key challenges in computer vision for self-driving cars: the ability to recognize and classify road signs accurately from digital images.
+
+Using TensorFlow and the German Traffic Sign Recognition Benchmark (GTSRB) dataset, this project builds and trains a convolutional neural network capable of identifying 43 different types of road signs with impressive accuracy. From stop signs to speed limits, yield signs to directional indicators, our neural network learns to distinguish between them all!
+
+## Why This Matters
+As autonomous vehicles become increasingly prevalent on our roads, the ability for these vehicles to understand their environment through computer vision is critical. This project represents a fundamental building block in the development of self-driving technology, making roads safer and transportation more efficient.
+
+Through this implementation, we explore various neural network architectures and techniques including convolutional layers, pooling, regularization, and more - demonstrating the power of deep learning in solving complex visual recognition tasks.
+
+## Key Features
+- Implementation of a neural network using TensorFlow
+- Processing and preparation of the GTSRB dataset
+- Experimentation with various model architectures
+- Visualization of model performance and accuracy
+- Insights into computer vision techniques for autonomous vehicles
+
+---
+
 # Modeling workflow
 
 ### Attempt 1: Barebones

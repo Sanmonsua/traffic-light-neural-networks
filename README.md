@@ -5,11 +5,6 @@ Welcome to the Traffic Sign Recognition project! This exciting application of ar
 
 Using TensorFlow and the German Traffic Sign Recognition Benchmark (GTSRB) dataset, this project builds and trains a convolutional neural network capable of identifying 43 different types of road signs with impressive accuracy. From stop signs to speed limits, yield signs to directional indicators, our neural network learns to distinguish between them all!
 
-## Why This Matters
-As autonomous vehicles become increasingly prevalent on our roads, the ability for these vehicles to understand their environment through computer vision is critical. This project represents a fundamental building block in the development of self-driving technology, making roads safer and transportation more efficient.
-
-Through this implementation, we explore various neural network architectures and techniques including convolutional layers, pooling, regularization, and more - demonstrating the power of deep learning in solving complex visual recognition tasks.
-
 ## Key Features
 - Implementation of a neural network using TensorFlow
 - Processing and preparation of the GTSRB dataset
@@ -243,7 +238,7 @@ model = keras.Sequential([
 
 This traffic sign recognition project demonstrates the power and versatility of convolutional neural networks in solving complex computer vision problems. Through systematic experimentation with different architectures and techniques, we achieved a remarkable 98% accuracy on the GTSRB dataset.
 
-Key learnings from this project include:
+Key learnings from this project:
 
 1. **The importance of convolutional layers**: Moving from a basic neural network to one with convolutional layers dramatically improved performance, highlighting their effectiveness in image recognition tasks.
 
@@ -252,7 +247,3 @@ Key learnings from this project include:
 3. **The benefit of depth**: Stacking multiple convolutional and pooling layers allowed the network to learn increasingly complex features.
 
 4. **The necessity of regularization**: Implementing dropout layers helped combat overfitting and improved generalization.
-
-This project serves as an excellent foundation for further exploration in computer vision applications for autonomous vehicles. Future improvements could include data augmentation techniques, transfer learning from pre-trained models, or implementation on edge devices for real-time traffic sign recognition.
-
-The journey from a basic model with less than 1% accuracy to an advanced CNN with 98% accuracy illustrates the iterative nature of deep learning development and the remarkable capabilities of modern neural network architectures.
